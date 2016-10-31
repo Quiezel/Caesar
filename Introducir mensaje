@@ -14,6 +14,6 @@ class Ideone
 		Scanner reader = new Scanner(System.in);  // Reading from System.in
 		System.out.println("Introduce el mensaje: ");
 		String mensaje = reader.next(); // Scans the next token of the input as an int.
-    System.out.println(mensaje);
+    		System.out.println(mensaje);
 	}
 }
