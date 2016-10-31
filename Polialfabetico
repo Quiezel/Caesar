@@ -23,11 +23,19 @@ class Ideone
 		lDL = llave.length();
 		for (int i=0;i<lDM;i++){
 			char a= mensaje.charAt(i);
-			int r = i%5;
-			int n = a+r;
+			int r = i%lDL;
+			int d = (llave.charAt(r)-64);
+			int n = a-d;
+			if (n>90){
+    			n= n-26;
+    		}
+    		else if (n<65){
+    			n= n+26;
+    		}
 			descifrado = descifrado + (char)n;
 		}
     	System.out.println(mensaje);
 		System.out.println(llave);
+		System.out.println(descifrado);
 	}
 }
