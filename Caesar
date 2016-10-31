@@ -1,0 +1,53 @@
+/* package whatever; // don't place package name! */
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		int frecuencia = 0;
+		int masFrecuente = 0;
+		char lMF = 'A';//letraMasFrecuente
+		int lDM = 0;	//largoDelMensaje
+		int d=0;
+		String descifrado = "";
+		// your code goes here
+		Scanner reader = new Scanner(System.in);  // Reading from System.in
+		System.out.println("Introduce el mensaje: ");
+		String mensaje = reader.next(); // Scans the next token of the input as an int.
+		lDM = mensaje.length();
+		for(char alph = 'A'; alph <= 'Z';alph++) {
+			for(int i=0 ; i< lDM;i++){
+				char a = mensaje.charAt(i);
+				if (a==alph){
+					frecuencia++;
+				}
+			}
+			if (frecuencia>masFrecuente){
+				masFrecuente = frecuencia;
+				lMF = alph;
+			}
+			frecuencia = 0;
+			d = lMF-'E';
+    	}
+    	for(int i=0 ; i< lDM;i++){
+    		int n=0;
+    		char a = mensaje.charAt(i);
+    		n=a-d;
+    		if (n>90){
+    			n= n-26;
+    		}
+    		else if (n<65){
+    			n= n+26;
+    		}
+    		descifrado= descifrado+((char)n);
+    	}
+    	System.out.println(masFrecuente);
+    	System.out.println(lMF);
+    	System.out.println(d);
+    	System.out.println(descifrado);
+	}
+}
