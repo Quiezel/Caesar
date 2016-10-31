@@ -14,6 +14,20 @@ class Ideone
 		Scanner reader = new Scanner(System.in);  // Reading from System.in
 		System.out.println("Introduce el mensaje: ");
 		String mensaje = reader.next(); // Scans the next token of the input as an string.
-    		System.out.println(mensaje);
+		System.out.println("Introduce la llave: ");
+		String llave = reader.next(); // Scans the next token of the input as an string.
+		int lDM = 0;
+		int lDL = 0;
+		String descifrado = "";
+		lDM = mensaje.length();
+		lDL = llave.length();
+		for (int i=0;i<lDM;i++){
+			char a= mensaje.charAt(i);
+			int r = i%5;
+			int n = a+r;
+			descifrado = descifrado + (char)n;
+		}
+    	System.out.println(mensaje);
+		System.out.println(llave);
 	}
 }
